@@ -1,0 +1,28 @@
+{
+  "name": "backbone-foundation-requirejs",
+  "version": "0.0.0",
+  "homepage": "https://github.com/doron2402/backbone-requirejs-foundation",
+  "description": "backbone app using foudation and requirejs",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "backbone",
+    "requirejs",
+    "foundation",
+    "underscore"
+  ],
+  "authors": [
+    "Doron Segal"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "requirejs": "2.1.10",
+    "foundation": "5.1.1",
+    "backbone": "~1.1.2",
+    "jquery-placeholder": "~2.0.9",
+    "lodash": "~2.4.1",
+    "lodash-template-loader": "~0.1.6"
+  }
+}
