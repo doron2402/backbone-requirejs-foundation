@@ -13,13 +13,25 @@ define(function(require, exports, module) {
 
     routes: {
       "": "index",
-      "#!/say/:something": "saySomething",
+      "!/say/:something": "saySomething",
       "*actions": "defaultRoute"
     },
 
     // Shortcut for building a url.
     go: function() {
       return this.navigate(_.toArray(arguments).join("/"), true);
+    },
+
+    index: function() {
+      console.log('index...');
+    },
+
+    saySomething: function(something) {
+      console.log(something);
+    },
+
+    defaultRoute: function() {
+      console.log('defaultRoute');
     }
 
   });

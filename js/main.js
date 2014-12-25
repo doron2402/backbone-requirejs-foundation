@@ -10,18 +10,7 @@ define("kickstart", function(require) {
   $(document).foundation({});
   app.router = new Router();
 
-  app.router.on('route:saySomething', function(s) {
-    console.log('index router funciton');
-    console.log(s);
-    // Reset the state and render.
-    $('#myModal').foundation('reveal', 'open');
-  });
-
-  app.router.on('route:saySomething', function (id) {
-      // Note the variable in the route definition being passed in here
-      alert( "Get post number " + id );
-  });
-
+  app.root = '/brf';
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
   Backbone.history.start({ pushState: true, root: app.root });
