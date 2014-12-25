@@ -7,7 +7,6 @@ define("kickstart", function(require) {
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
-  $(document).foundation({});
   app.router = new Router();
 
   app.root = '/brf';
@@ -36,6 +35,11 @@ define("kickstart", function(require) {
       Backbone.history.navigate(href.attr, true);
     }
   });
+
+  $(document).ready(function(){
+    $(document).foundation({});
+  });
+
 });
 
 // Break out the application running from the configuration definition to

@@ -5,6 +5,8 @@ define(function(require, exports, module) {
   console.log('asdf');
   require('foundation');
 
+  var Menu = require('./components/menu/index');
+
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     initialize: function() {
@@ -13,7 +15,7 @@ define(function(require, exports, module) {
 
     routes: {
       "": "index",
-      "!/say/:something": "saySomething",
+      "#!/say/:something": "saySomething",
       "*actions": "defaultRoute"
     },
 
@@ -24,6 +26,7 @@ define(function(require, exports, module) {
 
     index: function() {
       console.log('index...');
+      var menuView = new Menu.View({ el: $("#menu-view") });
     },
 
     saySomething: function(something) {
@@ -32,6 +35,7 @@ define(function(require, exports, module) {
 
     defaultRoute: function() {
       console.log('defaultRoute');
+      var menuView = new Menu.View({ el: $("#menu-view") });
     }
 
   });
