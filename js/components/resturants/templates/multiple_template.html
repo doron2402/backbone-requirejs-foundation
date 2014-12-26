@@ -1,0 +1,8 @@
+<div class="row">
+<% resturantsCollection.forEach(function(resturant){ %>
+	<div data-alert="" class="alert-box radius secondary">
+      	<a href="resturant/<%- resturant.id %>" target="_blank"> <%- resturant.name %> →</a>
+    	<a href="#" class="close">×</a>
+    </div>
+<% }); %>
+</div>

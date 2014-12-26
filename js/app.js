@@ -12,6 +12,10 @@ define(function(require, exports, module) {
   app.root = "/";
 
   // API endpoint.
+  app.apis = {
+
+  };
+
   app.api = "https://api.github.com/";
 
   // Useful defaults for GitHub Viewer.

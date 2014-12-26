@@ -2,10 +2,12 @@ define(function(require, exports, module) {
   "use strict";
 
   var app = require("app");
-  require('foundation');
+  require("foundation");
 
-  var Menu = require('./components/menu/index');
-  var subMenu = require('./components/subMenu/index');
+  var Menu = require("./components/menu/index");
+  var subMenu = require("./components/subMenu/index");
+  var Footer = require("./components/footer/index");
+  var Resturants = require("./components/resturants/index");
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -15,13 +17,14 @@ define(function(require, exports, module) {
 
     routes: {
       "": "index",
+      "resturants": "goToResturantsPage",
       "resturants/:resturant_id": "resturantsPage",
-      "say/:something": "saySomething",
       "*actions": "defaultRoute"
     },
     baseView: function() {
       var menuView = new Menu.View();
       var subMenuView = new subMenu.View({ el: $(".sub-menu") });
+      var footerView = new Footer.View({ el: $("footer") });
     },
 
     // Shortcut for building a url.
@@ -34,8 +37,9 @@ define(function(require, exports, module) {
 
     },
 
-    saySomething: function(something) {
-      console.log(something);
+    goToResturantsPage: function() {
+      console.log('here...goToResturantsPage');
+      var resturantsView = new Resturants.View.Multiple({ el: '.main-body' });
     },
 
     resturantsPage: function(resturant_id) {
